@@ -11,6 +11,7 @@ It uses ytdl-core, and electronjs.
 1. Clone this project.
 2. Go to the directory in your terminal.
 3. Run `npm install` to download npm modules.
-4. The run 'npm start'.
+4. The run `npm start`.
 5. Insert the URL you want to download & set a filename.
 6. Make sure the filename doesn't include characters that aren't allowed for file's names.
+7. When the download completes the status will change back to "Ready".
