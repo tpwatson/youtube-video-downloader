@@ -1,0 +1,29 @@
+{
+  "name": "youtube-video-downloader",
+  "version": "1.0.0",
+  "description": "simple tool to download youtube videos",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpwatson/youtube-video-downloader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpwatson/youtube-video-downloader/issues"
+  },
+  "homepage": "https://github.com/tpwatson/youtube-video-downloader#readme",
+  "devDependencies": {
+    "electron": "^7.1.10",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0",
+    "jquery": "^3.4.1",
+    "ytdl-core": "^1.0.7"
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>YouTube Video Downloader</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
+
+    <script>
+      window.$ = window.jQuery = require('jquery');
+    </script>
+
+  </head>
+  <body>
+    <h1>YouTube Video Downloader</h1>
+
+    <label for="url">YouTube URL: </label>
+    <input id="urlInput" class="inputField" type="text" name="url" placeholder="https://www.youtube.com/watch?v=_HSylqgVYQI"><br>
+
+    <label for="title">File Name:</label>
+    <input id="titleInput" class="inputField" type="text" name="title" placeholder="ScreamingCat"><br>
+
+    <input id="submitButton" type="submit" value="Download">
+
+    <h3 id="status">Ready</h3>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      console.log("Download button clicked");
+
+
+
+
+      $('#submitButton').on('click', function(){
+        $('#status').text('Busy');
+        $('#status').css("color", 'red');
+
+        let videoURL = $('#urlInput').val();
+        console.log(videoURL);
+        let title = $('#titleInput').val();
+        console.log(title);
+        DownloadIt(videoURL, title);
+      });
+
+      const fs = require('fs');
+      const ytdl = require('ytdl-core');
+
+      function DownloadIt(videoURL, title) {
+        console.log(videoURL + " downloading..");
+        ytdl(videoURL, { quality: 'highest'} ).pipe(fs.createWriteStream('downloads/'+title+'.mp4'));
+      }
+
+    });
+    </script>
+  </body>
+</html>
